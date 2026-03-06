@@ -1,10 +1,67 @@
 @use "mixin";
 @use "reset";
 
-body {
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 2.8rem;
-  background: #fff9e1;
+.section1 {
+  width: 100%;
+  background-image: url(/assets/images/section1-bg.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: relative;
+  padding: 9% 0 20%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    max-width: 1170px;
+    background-image: url(/assets/images/decorate-cloud.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   width: 2055px;
+  //   max-width: 3017px;
+  //   height: 792px;
+  //   background-image: url(/assets/images/decorate-light.png);
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   right: 0;
+  // }
+}
+
+.section1__title {
+    display: flex;
+    flex-direction: column;
+    margin: 0 31% 0 37%;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &--1 {
+      max-width: 608px;
+    }
+
+    &--2{
+      max-width: 401px;
+      margin-top: 32px;
+    }
+
+    &--3{
+      max-width: 455px;
+    }
+}
+
+.section2 {
+   width: 100%;
+  height: 2932px;
+  background-image: url(/assets/images/section2-bg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
