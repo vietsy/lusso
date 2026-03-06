@@ -1,0 +1,10 @@
+@use "mixin";
+@use "reset";
+
+body {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 2.8rem;
+  background: #fff9e1;
+  position: relative;
+}
