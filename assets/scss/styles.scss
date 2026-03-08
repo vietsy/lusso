@@ -110,6 +110,12 @@
     @include tab {
       top: 2.34%;
     }
+
+    @include sp {
+      width: 53.4%;
+      top: 2%;
+      left: 6.5%;
+    }
   }
 
   &--tau {
