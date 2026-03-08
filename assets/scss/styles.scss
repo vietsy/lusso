@@ -60,8 +60,12 @@
   background-image: url(/assets/images/section2-bg.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 86px 0 58%;
+  padding: 4.5% 0 58%;
   position: relative;
+
+  @include sp {
+    padding-top: 0;
+  }
 
   &::before {
     content: "";
