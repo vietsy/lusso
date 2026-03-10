@@ -12,10 +12,18 @@
 }
 
 @font-face {
+  font-family: "SFU-Fenice-LightOblique";
+  src: url("../fonts/SFUFeniceLightOblique.TTF") format("truetype");
+}
+
+@font-face {
   font-family: "SVN-Din";
   src: url("../fonts/SVN-PF Din Text Pro Regular.ttf") format("truetype");
 }
-a .main-content {
+
+$color-primary: #f6d7a6;
+
+.main-content {
   overflow: hidden;
 }
 .section1 {
@@ -46,7 +54,7 @@ a .main-content {
 .section1__title {
   display: flex;
   flex-direction: column;
-  margin: 0 31% 0 37%;
+  margin-left: 4%;
   align-items: center;
   justify-content: center;
 
@@ -56,8 +64,20 @@ a .main-content {
   }
 
   &--main {
-    max-width: 401px;
-    margin-top: 32px;
+    max-width: 441px;
+    margin-top: 11px;
+
+    @include m1440 {
+      max-width: 350px;
+    }
+
+    @include tab {
+      max-width: 250px;
+    }
+
+    @include sp {
+      max-width: 97px;
+    }
   }
 
   &--sub {
@@ -69,6 +89,14 @@ a .main-content {
     @include m1440 {
       font-size: 3rem;
     }
+
+    @include max(1280px) {
+      font-size: 2.8rem;
+    }
+
+    @include tab {
+      font-size: 2.2rem;
+    }
   }
 }
 
@@ -77,7 +105,7 @@ a .main-content {
   background-image: url(/assets/images/section2-bg.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 4.5% 0 44.35%;
+  padding: 4.5% 0 148%;
   position: relative;
 
   @include sp {
@@ -97,6 +125,10 @@ a .main-content {
     right: -23%;
     top: -25%;
     mix-blend-mode: screen;
+
+    @include tab {
+      top: -20%;
+    }
   }
 }
 
@@ -111,7 +143,9 @@ a .main-content {
     font-size: 3.5rem;
     max-width: 706px;
     color: #69141e;
-    margin: 0 22% 0 41%;
+    position: absolute;
+    left: 39%;
+    right: 22%;
     letter-spacing: -2%;
     span {
       font-size: 128px;
@@ -120,7 +154,10 @@ a .main-content {
   }
 
   &--2 {
-    margin: 67% 5% 15% 62%;
+    position: absolute;
+    bottom: 38%;
+    left: 55%;
+    right: 5%;
     font-size: 3.6rem;
     max-width: 622px;
     color: #e8cf8f;
@@ -130,12 +167,21 @@ a .main-content {
       rotate: 180deg;
     }
   }
+
   @include max(1550px) {
     font-size: 2.8rem;
 
     span {
       font-size: 10rem;
     }
+  }
+
+  @include m1440 {
+    font-size: 2.2rem;
+  }
+
+  @include tab {
+    font-size: 1.6rem;
   }
 }
 
@@ -165,6 +211,7 @@ a .main-content {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: relative;
+  padding: 36% 0 20%;
 
   &::before {
     content: "";
@@ -186,19 +233,30 @@ a .main-content {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   max-width: 492px;
-  padding: 14% 0 20%;
   margin-left: 2.96%;
+  position: absolute;
+  top: 14%;
+  bottom: 20%;
+
+  @include m1440 {
+    justify-content: flex-start;
+  }
 
   img {
     display: block;
     width: 100%;
     max-width: 457px;
     height: auto;
-    @include max(1880px) {
-      max-width: 400px;
+
+    @include m1440 {
+      max-width: 300px;
+    }
+
+    @include tab {
+      max-width: 200px;
     }
   }
 
@@ -207,6 +265,13 @@ a .main-content {
     font-size: 2.6rem;
     color: #701517;
     text-align: center;
+    @include m1440 {
+      font-size: 2rem;
+    }
+
+    @include tab {
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -217,7 +282,7 @@ a .main-content {
   aspect-ratio: 1330/1055;
   position: absolute;
   left: 38%;
-  bottom: -37%;
+  bottom: -41%;
 
   img {
     display: block;
@@ -225,11 +290,6 @@ a .main-content {
     height: auto;
     position: relative;
     z-index: 1;
-  }
-
-  @include tab {
-    left: 40%;
-    bottom: -22%;
   }
 
   &::before {
@@ -250,7 +310,7 @@ a .main-content {
 .section4 {
   width: 100%;
   background-image: url(/assets/images/section4-bg.jpg);
-  background-size: 100% 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
   padding-top: 14%;
   position: relative;
@@ -301,57 +361,150 @@ a .main-content {
   }
 }
 
-// .section4__introduce {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   margin-top: 6%;
-//   gap: 36px;
-//   padding: 0 5%;
-// }
+.section4__desc {
+  font-family: "SVN-Din";
+  font-size: 3rem;
+  text-align: center;
+  color: $color-primary;
+  max-width: 1388px;
+  margin: 6% auto 0;
 
-// .section4__service {
-//   padding: 68.6% 16% 28.6%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative;
+  @include m1440 {
+    font-size: 2.5rem;
+    max-width: 900px;
+  }
+}
 
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     background-image: url(/assets/images/section4-decorate-hand.png);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     z-index: 0;
-//     top: -2.95%;
-//   }
+.section4__achieves {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 5.25%;
 
-//   &--text {
-//     max-width: 1298px;
-//     margin-bottom: 4.5%;
-//   }
+  @include tab {
+    max-width: 80%;
+    flex-wrap: wrap;
+    gap: 30px 0;
+    margin: 5.25% auto 0;
+  }
+}
 
-//   &--item1 {
-//     max-width: 1167px;
-//   }
+.section4__achieve {
+  list-style: none;
+  font-family: "SFU-Life";
+  font-size: 40px;
+  color: $color-primary;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: calc(100% / 5);
+  min-width: 200px;
+  border-left: 3px $color-primary solid;
 
-//   &--item2 {
-//     max-width: 1195px;
-//   }
-// }
+  &--number {
+    font-size: 12.8rem;
+    font-family: "SFU-Fenice-LightOblique";
+    line-height: 1;
 
-// .section4__text {
-//   z-index: 1;
-//   img {
-//     width: 100%;
-//     height: auto;
-//   }
-// }
+    @include max(1800px) {
+      font-size: 10rem;
+    }
+
+    @include m1440 {
+      font-size: 7rem;
+    }
+  }
+
+  &--textXL {
+    font-size: 5rem;
+
+    @include max(1800px) {
+      font-size: 3.5rem;
+    }
+
+    @include m1440 {
+      font-size: 2.5rem;
+    }
+  }
+
+  &--text {
+    font-size: 4rem;
+
+    @include max(1800px) {
+      font-size: 2.5rem;
+    }
+
+    @include m1440 {
+      font-size: 2rem;
+    }
+  }
+
+  &--textSM {
+    font-size: 2.5rem;
+
+    @include max(1800px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &--top {
+    font-size: 10rem;
+    font-family: "SFU-Fenice-LightOblique";
+
+    @include max(1800px) {
+      font-size: 7rem;
+    }
+
+    @include m1440 {
+      font-size: 5rem;
+    }
+  }
+
+  &--wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    align-items: center;
+  }
+
+  &:first-child {
+    border: none;
+  }
+}
+
+.achieve4 {
+  width: 22.15%;
+}
+
+.section4__service {
+  padding: 0 16% 28.6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: -15% 10px 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/section4-decorate-hand.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &--desc {
+    color: $color-primary;
+    font-family: "SVN-Din";
+    font-size: 3.6rem;
+    margin-top: 127%;
+  }
+
+  &--items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+}
 
 // .footer {
 //   width: 100%;
