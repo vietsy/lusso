@@ -25,45 +25,56 @@ $color-primary: #f6d7a6;
 
 .main-content {
   overflow: hidden;
+  background-image: url(/assets/images/section-bg1-6.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 .section1 {
   width: 100%;
-  background-image: url(/assets/images/section1-bg.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   position: relative;
-  padding: 9% 0 20%;
+  padding: 8% 0 20%;
 
   &::before {
     content: "";
     position: absolute;
-    width: 61%;
-    height: 67.7%;
-    max-width: 1170px;
-    max-height: 792px;
-    background-image: url(/assets/images/decorate-cloud.png);
+    width: 45.3%;
+    aspect-ratio: 870/1367;
+    max-width: 870px;
+    max-height: 1367px;
+    background-image: url(/assets/images/decorate-boy-left.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    mix-blend-mode: screen;
-    z-index: 1;
-    top: 50%;
-    left: -150px;
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 26.5%;
+    aspect-ratio: 509/817;
+    max-width: 509px;
+    max-height: 817px;
+    background-image: url(/assets/images/decorate-girl-right.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 0;
+    top: 28.75%;
+    right: 0;
   }
 }
 
 .section1__title {
   display: flex;
   flex-direction: column;
-  margin-left: 4%;
+  margin-left: 10%;
   align-items: center;
   justify-content: center;
 
-  img {
-    width: 100%;
-    height: auto;
-  }
-
   &--main {
+    width: 23%;
+    height: auto;
     max-width: 441px;
     margin-top: 11px;
 
@@ -71,7 +82,7 @@ $color-primary: #f6d7a6;
       max-width: 350px;
     }
 
-    @include tab {
+    @include max(1280px) {
       max-width: 250px;
     }
 
@@ -102,9 +113,6 @@ $color-primary: #f6d7a6;
 
 .section2 {
   width: 100%;
-  background-image: url(/assets/images/section2-bg.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   padding: 4.5% 0 148%;
   position: relative;
 
@@ -125,10 +133,7 @@ $color-primary: #f6d7a6;
     right: -23%;
     top: -25%;
     mix-blend-mode: screen;
-
-    @include tab {
-      top: -20%;
-    }
+    z-index: 1;
   }
 }
 
@@ -144,9 +149,10 @@ $color-primary: #f6d7a6;
     max-width: 706px;
     color: #69141e;
     position: absolute;
-    left: 39%;
+    left: 41%;
     right: 22%;
     letter-spacing: -2%;
+    z-index: 1;
     span {
       font-size: 128px;
       line-height: 0.2;
@@ -156,7 +162,7 @@ $color-primary: #f6d7a6;
   &--2 {
     position: absolute;
     bottom: 38%;
-    left: 55%;
+    left: 60%;
     right: 5%;
     font-size: 3.6rem;
     max-width: 622px;
@@ -169,15 +175,15 @@ $color-primary: #f6d7a6;
   }
 
   @include max(1550px) {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
 
     span {
       font-size: 10rem;
     }
   }
 
-  @include m1440 {
-    font-size: 2.2rem;
+  @include max(1280px) {
+    font-size: 2rem;
   }
 
   @include tab {
@@ -191,42 +197,38 @@ $color-primary: #f6d7a6;
   height: auto;
 
   &--passport {
-    width: 51%;
-    top: 1.6%;
-    left: 7.6%;
-
-    @include sp {
-      left: 6.5%;
-    }
+    right: 0;
+    top: -12%;
+    z-index: 0;
   }
 
   &--tau {
-    top: 18%;
+    height: 100%;
+    background-image: url(/assets/images/decorate-tau.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 19%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url(/assets/images/decorate-line1.webp);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      mix-blend-mode: screen;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
   }
 }
 
 .section3 {
   width: 100%;
-  background-image: url(/assets/images/section3-bg.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  padding-top: 51%;
   position: relative;
-  padding: 36% 0 20%;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 21.3%;
-    height: 100%;
-    max-width: 409px;
-    max-height: 680px;
-    background-image: url(/assets/images/decorate-leaf.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    left: 0;
-    top: 60%;
-    z-index: 1;
-  }
 }
 
 .section3__text {
@@ -277,12 +279,13 @@ $color-primary: #f6d7a6;
 
 .section3__decor {
   display: block;
-  width: 69.2%;
-  max-width: 1330px;
-  aspect-ratio: 1330/1055;
+  width: 59.25%;
+  max-width: 1137px;
+  max-height: 817px;
+  aspect-ratio: 1137 / 817;
   position: absolute;
-  left: 38%;
-  bottom: -41%;
+  left: 41%;
+  bottom: -26%;
 
   img {
     display: block;
@@ -295,58 +298,28 @@ $color-primary: #f6d7a6;
   &::before {
     content: "";
     position: absolute;
-    width: 84.15%;
-    height: 91.4%;
-    background-image: url(/assets/images/section3-decor-light.png);
+    width: 177.6%;
+    aspect-ratio: 2020 / 1776;
+    background-image: url(/assets/images/decorate-line2.webp);
     background-size: 100%;
     background-repeat: no-repeat;
-    right: 5.5%;
-    bottom: 18%;
+    right: -2%;
+    bottom: -28%;
     mix-blend-mode: screen;
-    z-index: 1;
+    z-index: 2;
+  }
+
+  @include max(1280px) {
+    bottom: -30%;
   }
 }
 
 .section4 {
   width: 100%;
-  background-image: url(/assets/images/section4-bg.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
   padding-top: 14%;
   position: relative;
   z-index: 0;
   overflow: hidden;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 56.35%;
-    height: auto;
-    aspect-ratio: 1082/1121;
-    max-width: 1182px;
-    max-height: 1121px;
-    background-image: url(/assets/images/decorate-glitter1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    mix-blend-mode: screen;
-    top: -15%;
-  }
-
-  &::after {
-    background-image: url(/assets/images/decorate-glitter2.png);
-    right: 0;
-    top: -18%;
-    z-index: 0;
-
-    @include m1440 {
-      top: -16%;
-    }
-
-    @include tab {
-      top: -13%;
-    }
-  }
 }
 
 .section4__title {
@@ -380,13 +353,6 @@ $color-primary: #f6d7a6;
   justify-content: center;
   align-items: stretch;
   margin-top: 5.25%;
-
-  @include tab {
-    max-width: 80%;
-    flex-wrap: wrap;
-    gap: 30px 0;
-    margin: 5.25% auto 0;
-  }
 }
 
 .section4__achieve {
@@ -477,14 +443,14 @@ $color-primary: #f6d7a6;
   width: 22.15%;
 }
 
-.section4__service {
+.section5__service {
   padding: 0 16% 28.6%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: -15% 10px 0;
+  margin-top: -15%;
   width: 100%;
   height: 100%;
   background-image: url(/assets/images/section4-decorate-hand.png);
@@ -496,13 +462,85 @@ $color-primary: #f6d7a6;
     font-family: "SVN-Din";
     font-size: 3.6rem;
     margin-top: 127%;
+    text-align: center;
+
+    @include m1440 {
+      font-size: 3rem;
+    }
   }
 
   &--items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
     grid-auto-rows: minmax(100px, auto);
+    margin-top: 104px;
+    gap: 0 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 588px;
+
+      @include m1440 {
+        max-width: 400px;
+      }
+    }
+  }
+
+  &--name {
+    display: block;
+    font-family: "SFU-Fenice-LightOblique";
+    font-size: 6.5rem;
+    text-align: center;
+    color: $color-primary;
+    text-transform: uppercase;
+
+    @include max(1700px) {
+      font-size: 5rem;
+    }
+
+    @include m1440 {
+      font-size: 4rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 30px auto 0;
+      width: 64.5%;
+      max-width: 420px;
+      aspect-ratio: 420 / 21;
+      height: auto;
+      background-image: url(/assets/images/decorate-shape.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--text {
+    display: block;
+    font-family: "SFU-Fenice-LightOblique";
+    font-size: 4.5rem;
+    text-align: center;
+    color: $color-primary;
+    margin-top: 16px;
+
+    @include max(1700px) {
+      font-size: 3.2rem;
+    }
+
+    @include m1440 {
+      font-size: 2.8rem;
+    }
+  }
+
+  &--wrapper1 {
+    margin-top: 17.5%;
+  }
+
+  &--wrapper2 {
+    margin-top: 23.4%;
   }
 }
 
