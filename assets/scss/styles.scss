@@ -1,6 +1,8 @@
 @use "mixin" as *;
 @use "reset";
 
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 @font-face {
   font-family: "SFU-Life";
   src: url("../fonts/SFULifeItalic.TTF") format("truetype");
@@ -19,6 +21,11 @@
 @font-face {
   font-family: "SVN-Din";
   src: url("../fonts/SVN-PF Din Text Pro Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Be-VietNam";
+  src: url("../fonts/BeVietnam-Regular.ttf") format("truetype");
 }
 
 $color-primary: #f6d7a6;
@@ -200,6 +207,27 @@ $color-primary: #f6d7a6;
     right: 0;
     top: -12%;
     z-index: 0;
+    height: 100%;
+    background-image: url(/assets/images/decorate-passport.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 26%;
+      height: 26%;
+      max-width: 500px;
+      max-height: 500px;
+      background-image: url(/assets/images/decorate-circle.webp);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      mix-blend-mode: screen;
+      left: 12%;
+      top: 17%;
+      z-index: 1;
+      transform: rotate(60deg);
+    }
   }
 
   &--tau {
@@ -430,7 +458,7 @@ $color-primary: #f6d7a6;
   &--wrapper {
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 10px;
     align-items: center;
   }
 
@@ -444,24 +472,25 @@ $color-primary: #f6d7a6;
 }
 
 .section5__service {
-  padding: 0 16% 28.6%;
+  padding: 0 15% 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: -15%;
+  margin-top: -10%;
   width: 100%;
   height: 100%;
   background-image: url(/assets/images/section4-decorate-hand.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 
   &--desc {
     color: $color-primary;
     font-family: "SVN-Din";
     font-size: 3.6rem;
-    margin-top: 127%;
+    margin-top: 120%;
     text-align: center;
 
     @include m1440 {
@@ -544,11 +573,126 @@ $color-primary: #f6d7a6;
   }
 }
 
-// .footer {
-//   width: 100%;
-//   background-image: url(/assets/images/footer-bg.jpg);
-//   background-size: 100% 100%;
-//   background-repeat: no-repeat;
-//   position: relative;
-//   z-index: 0;
-// }
+.footer {
+  width: 100%;
+  background-image: url(/assets/images/footer-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: -1;
+  padding: 23% 5.4% 24.5%;
+  margin-top: -24%;
+  text-align: center;
+  color: #fffadc;
+}
+
+.footer__text {
+  font-family: "SVN-Din";
+  font-size: 2.6rem;
+
+  @include m1440 {
+    font-size: 2.2rem;
+  }
+}
+
+.footer__logo {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  max-width: 212px;
+
+  @include m1440 {
+    max-width: 150px;
+  }
+}
+
+.footer__info {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin-top: 30px;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 4rem;
+
+  @include m1440 {
+    font-size: 3rem;
+  }
+
+  &--phone {
+    position: relative;
+    padding-left: 43px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 35px;
+      height: 35px;
+      background-image: url(/assets/images/icon-phone.svg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 5px;
+      left: 0;
+
+      @include m1440 {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  &--map {
+    position: relative;
+    padding-left: 37px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 29px;
+      height: 29px;
+      background-image: url(/assets/images/icon-map.svg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 10px;
+      left: 0;
+
+      @include m1440 {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.footer__address {
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+
+  @include m1440 {
+    font-size: 3rem;
+  }
+}
+
+.footer__company {
+  margin-top: 18px;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+
+  @include m1440 {
+    font-size: 3rem;
+  }
+
+  &--desc {
+    margin: 30px auto 0;
+    font-family: "Be-VietNam";
+    font-size: 2.4rem;
+    max-width: 1712px;
+
+    @include m1440 {
+      font-size: 2rem;
+    }
+  }
+}
