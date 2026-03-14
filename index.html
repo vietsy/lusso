@@ -23,6 +23,13 @@
   <body>
     <main aria-label="Main Content" class="main-content">
       <section class="section1">
+        <img
+          width="192"
+          height="79"
+          class="section1__logo"
+          src="/assets/images/logo.png"
+          fetchpriority="high"
+        />
         <h1 class="section1__title">
           <span class="section1__title--sub">
             Chào mừng quý hành khách bước vào <br />
@@ -46,11 +53,18 @@
         <div
           class="section2__decor section2__decor--passport"
           aria-hidden="true"
-        ></div>
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            src="/assets/images/decorate-circle.webp"
+          />
+        </div>
         <p class="section2__text section2__text--1">
           <span>“</span>
           Với hộ chiếu mang dấu ‘W’ biểu tượng,<br />
-          quý hành khách đang tiến tới khoang hạng nhất WorldHotels.
+          quý hành khách đang tiến tới <br class="spOnly" />
+          khoang hạng nhất WorldHotels.
         </p>
         <div
           class="section2__decor section2__decor--tau"
@@ -58,7 +72,8 @@
         ></div>
         <p class="section2__text section2__text--2">
           Hãy cùng hoà mình vào chuẩn <br />
-          lưu trú quốc tế, với dịch vụ, trải nghiệm chuẩn mực toàn cầu
+          lưu trú quốc tế, với dịch vụ, trải nghiệm <br />
+          chuẩn mực toàn cầu
           <span>“</span>
         </p>
       </section>
@@ -101,11 +116,12 @@
         <p class="section4__desc">
           Lusso Saigon chính thức ghi danh vào mạng lưới toàn cầu của
           WorldHotels™ Residences – nhà kiến tạo nghệ thuật phục vụ thượng lưu
-          đứng sau các khách sạn & khu nghỉ dưỡng độc lập cao cấp toàn cầu
+          đứng sau các <br class="spOnly" />
+          khách sạn & khu nghỉ dưỡng độc lập cao cấp toàn cầu
         </p>
         <ul class="section4__achieves">
           <li class="section4__achieve">
-            <div>
+            <div class="section4__achieve--wrapper">
               <span class="section4__achieve--number">55</span>
               <span class="section4__achieve--textXL">năm</span>
             </div>
@@ -142,37 +158,43 @@
             <span class="section4__achieve--text">Hiện diện</span>
             <div class="section4__achieve--wrapper">
               <span class="section4__achieve--number">38</span>
-              <span class="section4__achieve--text">quốc<br />gia</span>
+              <span class="section4__achieve--text"
+                >quốc<br />
+                gia</span
+              >
             </div>
           </li>
         </ul>
       </section>
-      <section class="section5__service">
-        <p class="section5__service--desc">
-          Mời quý vị cùng khám phá tiêu chuẩn sống tại Lusso Saigon, nơi chuẩn
-          mực 5 sao quốc tế trở thành nhịp sống hàng ngày
-        </p>
-        <div class="section5__service--items">
-          <img src="/assets/images/section5-img1.png" alt="" loading="lazy" />
-          <div class="section5__service--wrapper1">
-            <span class="section5__service--name"
-              >DỊCH VỤ THIẾT YẾU <br />
-              PHỤC VỤ 16/7
-            </span>
-            <span class="section5__service--text"
-              >Chu toàn mọi nhu cầu thường nhật</span
-            >
+      <section class="section5">
+        <div class="section5__service">
+          <p class="section5__service--desc">
+            Mời quý vị cùng khám phá tiêu chuẩn sống tại Lusso Saigon,
+            <!-- <br class="spOnly" /> -->
+            nơi chuẩn mực 5 sao quốc tế trở thành nhịp sống hàng ngày
+          </p>
+          <div class="section5__service--items">
+            <img src="/assets/images/section5-img1.png" alt="" loading="lazy" />
+            <div class="section5__service--wrapper section5__service--wrapper1">
+              <span class="section5__service--name"
+                >DỊCH VỤ THIẾT YẾU <br />
+                PHỤC VỤ 16/7
+              </span>
+              <span class="section5__service--text"
+                >Chu toàn mọi nhu cầu thường nhật</span
+              >
+            </div>
+            <div class="section5__service--wrapper section5__service--wrapper2">
+              <span class="section5__service--name"
+                >A-la-carte <br />
+                general services
+              </span>
+              <span class="section5__service--text"
+                >Đáp ứng dịch vụ cá nhân hoá cao
+              </span>
+            </div>
+            <img src="/assets/images/section5-img2.png" alt="" loading="lazy" />
           </div>
-          <div class="section5__service--wrapper2">
-            <span class="section5__service--name"
-              >A-la-carte <br />
-              general services
-            </span>
-            <span class="section5__service--text"
-              >Đáp ứng dịch vụ cá nhân hoá cao
-            </span>
-          </div>
-          <img src="/assets/images/section5-img2.png" alt="" loading="lazy" />
         </div>
       </section>
     </main>
@@ -181,7 +203,7 @@
       <picture>
         <source
           srcset="/assets/images/footer-logo-sp.png"
-          media="(max-width: 768px)"
+          media="(max-width: 1024px )"
         />
         <img
           src="/assets/images/footer-logo.png"

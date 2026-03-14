@@ -30,6 +30,14 @@
 
 $color-primary: #f6d7a6;
 
+.spOnly {
+  display: none;
+
+  @include tab {
+    display: block;
+  }
+}
+
 .main-content {
   overflow: hidden;
   background-image: url(/assets/images/section-bg1-6.jpg);
@@ -40,6 +48,10 @@ $color-primary: #f6d7a6;
   width: 100%;
   position: relative;
   padding: 8% 0 20%;
+
+  @include tab {
+    padding: 4.5% 0 20%;
+  }
 
   &::before {
     content: "";
@@ -54,6 +66,17 @@ $color-primary: #f6d7a6;
     z-index: 0;
     top: 0;
     left: 0;
+
+    @include tab {
+      width: 36.4%;
+      max-width: 364px;
+      aspect-ratio: 364/616;
+      top: -6%;
+    }
+
+    @include sp {
+      top: -3%;
+    }
   }
 
   &::after {
@@ -69,6 +92,24 @@ $color-primary: #f6d7a6;
     z-index: 0;
     top: 28.75%;
     right: 0;
+
+    @include tab {
+      width: 17.9%;
+      max-width: 179px;
+      aspect-ratio: 179/288;
+      top: 19.75%;
+    }
+  }
+}
+
+.section1__logo {
+  display: none;
+
+  @include tab {
+    display: block;
+    width: 21%;
+    height: auto;
+    margin: 0 auto 2%;
   }
 }
 
@@ -78,6 +119,10 @@ $color-primary: #f6d7a6;
   margin-left: 10%;
   align-items: center;
   justify-content: center;
+
+  @include tab {
+    margin: 0 auto;
+  }
 
   &--main {
     width: 23%;
@@ -93,8 +138,14 @@ $color-primary: #f6d7a6;
       max-width: 250px;
     }
 
+    @include tab {
+      width: 19.2%;
+      max-width: 192px;
+      margin: 16px 0;
+    }
+
     @include sp {
-      max-width: 97px;
+      margin: 8px 0;
     }
   }
 
@@ -113,7 +164,11 @@ $color-primary: #f6d7a6;
     }
 
     @include tab {
-      font-size: 2.2rem;
+      font-size: 2rem;
+    }
+
+    @include sp {
+      font-size: 1.2rem;
     }
   }
 }
@@ -123,8 +178,8 @@ $color-primary: #f6d7a6;
   padding: 4.5% 0 148%;
   position: relative;
 
-  @include sp {
-    padding-top: 0;
+  @include tab {
+    padding: 0 0 144%;
   }
 
   &::before {
@@ -141,6 +196,14 @@ $color-primary: #f6d7a6;
     top: -25%;
     mix-blend-mode: screen;
     z-index: 1;
+
+    @include tab {
+      width: 44%;
+      max-width: 440px;
+      aspect-ratio: 440/392;
+      top: -35%;
+      right: -14%;
+    }
   }
 }
 
@@ -160,16 +223,22 @@ $color-primary: #f6d7a6;
     right: 22%;
     letter-spacing: -2%;
     z-index: 1;
+
     span {
-      font-size: 128px;
+      font-size: 12.8rem;
       line-height: 0.2;
+    }
+
+    @include tab {
+      top: -9.5%;
+      left: 37%;
+      right: 20%;
     }
   }
 
   &--2 {
     position: absolute;
     bottom: 38%;
-    left: 60%;
     right: 5%;
     font-size: 3.6rem;
     max-width: 622px;
@@ -178,6 +247,14 @@ $color-primary: #f6d7a6;
       font-size: 12.8rem;
       line-height: 0.6;
       rotate: 180deg;
+    }
+
+    @include max(1550px) {
+      bottom: 41%;
+    }
+
+    @include sp {
+      right: 8%;
     }
   }
 
@@ -191,10 +268,26 @@ $color-primary: #f6d7a6;
 
   @include max(1280px) {
     font-size: 2rem;
+
+    span {
+      font-size: 4rem;
+    }
   }
 
-  @include tab {
-    font-size: 1.6rem;
+  @include sp {
+    font-size: 1.2rem;
+
+    span {
+      font-size: 2rem;
+    }
+  }
+
+  @include max(532px) {
+    font-size: 1rem;
+
+    span {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -212,21 +305,33 @@ $color-primary: #f6d7a6;
     background-size: 100%;
     background-repeat: no-repeat;
 
-    &::before {
+    @include tab {
+      background-image: url(/assets/images/decorate-passport-sp.png);
+      top: -25%;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    img {
       content: "";
       position: absolute;
       width: 26%;
-      height: 26%;
+      aspect-ratio: 1;
       max-width: 500px;
       max-height: 500px;
-      background-image: url(/assets/images/decorate-circle.webp);
-      background-size: 100%;
-      background-repeat: no-repeat;
       mix-blend-mode: screen;
-      left: 12%;
+      right: 62%;
       top: 17%;
       z-index: 1;
       transform: rotate(60deg);
+
+      @include tab {
+        right: 61%;
+        top: 16%;
+        transform: rotate(62deg);
+      }
     }
   }
 
@@ -249,6 +354,18 @@ $color-primary: #f6d7a6;
       left: 0;
       top: 0;
       z-index: 1;
+
+      @include tab {
+        right: -4%;
+        bottom: -27%;
+      }
+    }
+
+    @include tab {
+      width: 122.1%;
+      aspect-ratio: 1221 / 1225;
+      top: 6%;
+      left: -13%;
     }
   }
 }
@@ -265,14 +382,22 @@ $color-primary: #f6d7a6;
   gap: 26px;
   align-items: center;
   justify-content: center;
-  max-width: 492px;
-  margin-left: 2.96%;
+  margin: 0 60% 0 2.96%;
   position: absolute;
   top: 14%;
   bottom: 20%;
 
   @include m1440 {
     justify-content: flex-start;
+    top: 0;
+  }
+
+  @include tab {
+    gap: 16px;
+  }
+
+  @include sp {
+    gap: 8px;
   }
 
   img {
@@ -282,11 +407,21 @@ $color-primary: #f6d7a6;
     height: auto;
 
     @include m1440 {
-      max-width: 300px;
+      max-width: 350px;
     }
 
     @include tab {
-      max-width: 200px;
+      width: 90%;
+      max-width: 304px;
+    }
+
+    @include sp {
+      width: 90%;
+      max-width: 250px;
+    }
+
+    @include max(650px) {
+      max-width: 150px;
     }
   }
 
@@ -300,7 +435,15 @@ $color-primary: #f6d7a6;
     }
 
     @include tab {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
+    }
+
+    @include sp {
+      font-size: 1rem;
+    }
+
+    @include max(650px) {
+      font-size: 0.8rem;
     }
   }
 }
@@ -340,14 +483,22 @@ $color-primary: #f6d7a6;
   @include max(1280px) {
     bottom: -30%;
   }
+
+  @include max(500px) {
+    bottom: -25%;
+  }
 }
 
 .section4 {
   width: 100%;
-  padding-top: 14%;
+  padding: 14% 0 50%;
   position: relative;
   z-index: 0;
   overflow: hidden;
+
+  @include sp {
+    padding: 14% 5% 0;
+  }
 }
 
 .section4__title {
@@ -359,6 +510,10 @@ $color-primary: #f6d7a6;
     width: 68.5%;
     height: auto;
     max-width: 1315px;
+
+    @include tab {
+      width: 88.5%;
+    }
   }
 }
 
@@ -374,6 +529,15 @@ $color-primary: #f6d7a6;
     font-size: 2.5rem;
     max-width: 900px;
   }
+
+  @include tab {
+    max-width: 860px;
+  }
+
+  @include sp {
+    font-size: 1.2rem;
+    max-width: 390px;
+  }
 }
 
 .section4__achieves {
@@ -381,6 +545,17 @@ $color-primary: #f6d7a6;
   justify-content: center;
   align-items: stretch;
   margin-top: 5.25%;
+
+  @include tab {
+    max-width: 600px;
+    flex-wrap: wrap;
+    gap: 30px 0;
+    margin: 5.25% auto 0;
+  }
+
+  @include sp {
+    max-width: 400px;
+  }
 }
 
 .section4__achieve {
@@ -392,9 +567,12 @@ $color-primary: #f6d7a6;
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: calc(100% / 5);
-  min-width: 200px;
+  width: 20%;
   border-left: 3px $color-primary solid;
+
+  @include tab {
+    width: calc(100% / 3);
+  }
 
   &--number {
     font-size: 12.8rem;
@@ -408,6 +586,14 @@ $color-primary: #f6d7a6;
     @include m1440 {
       font-size: 7rem;
     }
+
+    @include tab {
+      font-size: 5rem;
+    }
+
+    @include sp {
+      font-size: 3.5rem;
+    }
   }
 
   &--textXL {
@@ -419,6 +605,14 @@ $color-primary: #f6d7a6;
 
     @include m1440 {
       font-size: 2.5rem;
+    }
+
+    @include tab {
+      font-size: 2rem;
+    }
+
+    @include sp {
+      font-size: 1.6rem;
     }
   }
 
@@ -432,6 +626,14 @@ $color-primary: #f6d7a6;
     @include m1440 {
       font-size: 2rem;
     }
+
+    @include tab {
+      font-size: 1.6rem;
+    }
+
+    @include sp {
+      font-size: 1.2rem;
+    }
   }
 
   &--textSM {
@@ -439,6 +641,10 @@ $color-primary: #f6d7a6;
 
     @include max(1800px) {
       font-size: 1.5rem;
+    }
+
+    @include tab {
+      font-size: 1rem;
     }
   }
 
@@ -453,6 +659,14 @@ $color-primary: #f6d7a6;
     @include m1440 {
       font-size: 5rem;
     }
+
+    @include tab {
+      font-size: 3.5rem;
+    }
+
+    @include sp {
+      font-size: 2rem;
+    }
   }
 
   &--wrapper {
@@ -460,6 +674,17 @@ $color-primary: #f6d7a6;
     justify-content: center;
     gap: 10px;
     align-items: center;
+
+    &:last-child {
+      @include tab {
+        flex-direction: column;
+        gap: 0;
+
+        br {
+          display: none;
+        }
+      }
+    }
   }
 
   &:first-child {
@@ -469,16 +694,22 @@ $color-primary: #f6d7a6;
 
 .achieve4 {
   width: 22.15%;
+
+  @include tab {
+    border: none;
+    margin-right: 5%;
+    width: calc(100% / 3);
+  }
 }
 
-.section5__service {
-  padding: 0 15% 35%;
+.section5 {
+  padding: 0 15% 200%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: -10%;
+  margin-top: -60%;
   width: 100%;
   height: 100%;
   background-image: url(/assets/images/section4-decorate-hand.png);
@@ -486,15 +717,57 @@ $color-primary: #f6d7a6;
   background-repeat: no-repeat;
   background-position: center;
 
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/assets/images/section5-bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: revert-layer;
+    position: absolute;
+    z-index: -1;
+    bottom: 50%;
+    background-position-y: bottom;
+  }
+
+  @include tab {
+    margin-top: -70%;
+    background-image: url(/assets/images/section4-decorate-hand-sp.png);
+  }
+
+  @include sp {
+    margin-top: -15%;
+  }
+}
+.section5__service {
+  position: absolute;
+  top: 40%;
+  margin: 0 15%;
+
+  @include tab {
+    top: 43%;
+  }
+
   &--desc {
     color: $color-primary;
     font-family: "SVN-Din";
     font-size: 3.6rem;
-    margin-top: 120%;
     text-align: center;
+    max-width: 1158px;
+    margin: 0 auto;
 
     @include m1440 {
       font-size: 3rem;
+    }
+
+    @include tab {
+      font-size: 2.5rem;
+    }
+
+    @include sp {
+      font-size: 1.4rem;
     }
   }
 
@@ -502,8 +775,17 @@ $color-primary: #f6d7a6;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, auto);
-    margin-top: 104px;
+    margin-top: 7.75%;
     gap: 0 20px;
+
+    @include tab {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px 0;
+    }
+
+    @include sp {
+      gap: 20px 0;
+    }
 
     img {
       display: block;
@@ -513,6 +795,14 @@ $color-primary: #f6d7a6;
 
       @include m1440 {
         max-width: 400px;
+      }
+
+      @include tab {
+        max-width: 212px;
+      }
+
+      @include sp {
+        max-width: 212px;
       }
     }
   }
@@ -533,6 +823,10 @@ $color-primary: #f6d7a6;
       font-size: 4rem;
     }
 
+    @include sp {
+      font-size: 2rem;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -544,6 +838,10 @@ $color-primary: #f6d7a6;
       background-image: url(/assets/images/decorate-shape.png);
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include sp {
+        margin: 15px auto 0;
+      }
     }
   }
 
@@ -562,14 +860,29 @@ $color-primary: #f6d7a6;
     @include m1440 {
       font-size: 2.8rem;
     }
+
+    @include tab {
+      font-size: 2rem;
+    }
+
+    @include sp {
+      font-size: 1.2rem;
+    }
   }
 
-  &--wrapper1 {
-    margin-top: 17.5%;
-  }
+  &--wrapper {
+    &1 {
+      margin-top: 17.5%;
+    }
 
-  &--wrapper2 {
-    margin-top: 23.4%;
+    &2 {
+      margin-top: 23.4%;
+    }
+
+    @include tab {
+      grid-column: span 2;
+      margin-top: 0;
+    }
   }
 }
 
@@ -593,6 +906,14 @@ $color-primary: #f6d7a6;
   @include m1440 {
     font-size: 2.2rem;
   }
+
+  @include tab {
+    font-size: 1.6rem;
+  }
+
+  @include sp {
+    font-size: 1rem;
+  }
 }
 
 .footer__logo {
@@ -602,6 +923,10 @@ $color-primary: #f6d7a6;
   max-width: 212px;
 
   @include m1440 {
+    max-width: 197px;
+  }
+
+  @include sp {
     max-width: 150px;
   }
 }
@@ -618,9 +943,18 @@ $color-primary: #f6d7a6;
     font-size: 3rem;
   }
 
+  @include tab {
+    margin-top: 0;
+    font-size: 2.5rem;
+  }
+
   &--phone {
     position: relative;
     padding-left: 43px;
+
+    @include tab {
+      padding-left: 30px;
+    }
 
     &::before {
       content: "";
@@ -638,12 +972,21 @@ $color-primary: #f6d7a6;
         width: 25px;
         height: 25px;
       }
+
+      @include tab {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
   &--map {
     position: relative;
-    padding-left: 37px;
+    padding-left: 38px;
+
+    @include tab {
+      padding-left: 30px;
+    }
 
     &::before {
       content: "";
@@ -661,6 +1004,10 @@ $color-primary: #f6d7a6;
         width: 20px;
         height: 20px;
       }
+
+      @include tab {
+        top: 5px;
+      }
     }
   }
 }
@@ -672,6 +1019,10 @@ $color-primary: #f6d7a6;
 
   @include m1440 {
     font-size: 3rem;
+  }
+
+  @include tab {
+    font-size: 2rem;
   }
 }
 
@@ -685,6 +1036,10 @@ $color-primary: #f6d7a6;
     font-size: 3rem;
   }
 
+  @include tab {
+    font-size: 2rem;
+  }
+
   &--desc {
     margin: 30px auto 0;
     font-family: "Be-VietNam";
@@ -693,6 +1048,15 @@ $color-primary: #f6d7a6;
 
     @include m1440 {
       font-size: 2rem;
+    }
+
+    @include tab {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+
+    @include sp {
+      font-size: 1rem;
     }
   }
 }
